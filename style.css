@@ -1,0 +1,762 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: wheat;
+    width:100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ed0707;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #003d82;
+}
+
+/* Header Styles */
+header {
+    background-color: black;
+    
+    box-shadow: 0 2px 5px rgba(34, 32, 32, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+    width: 100%;
+
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo img{
+    max-height: 130px; /* Προσαρμόστε το ύψος ανάλογα με τις ανάγκες σας */
+    width: auto; /* Διατηρεί τις αναλογίες της εικόνας */
+    margin-bottom: 10px; /* Απόσταση μεταξύ λογότυπου και τίτλου */
+}
+
+.logo h1 {
+    color: #ed0707;
+    font-size: 2.5rem;
+}
+
+.logo p {
+    color: #ed0707;
+    font-size: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width:100%;
+}
+
+nav ul li a {
+    padding: 10px 20px;
+    margin: 0 5px;
+    color: wheat;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #ed0707;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    min-height: calc(100vh - 200px);
+    width:100%;
+}
+
+.page {
+    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Home Page Styles */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x400?text=AutoParts');
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 100px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    color: wheat;
+}
+
+.feature {
+    background: rgb(0, 0, 0);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(65, 62, 62, 0.1);
+    width: 30%;
+    min-width: 300px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature i {
+    font-size: 3rem;
+    color: #c3c7cb;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    margin-bottom: 15px;
+}
+
+.language-switcher {
+     position: static; /* Αφαίρεση absolute positioning */
+    margin-left: auto; /* Στοίχιση δεξιά */
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    size: 60px;
+}
+
+#langToggle {
+    padding: 5px 10px;
+    size: 60px;
+    background-color: #ed0707;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+
+/* Products Page Styles */
+.product-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    color: red;
+}
+
+.category {
+    width: 23%;
+    min-width: 250px;
+    margin-bottom: 20px;
+    background: rgb(233, 231, 231);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+}
+
+.category img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category h3 {
+    padding: 15px;
+    color: #c3c7cb;
+}
+
+.category p {
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+.vehicle-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+      flex-wrap: wrap;
+}
+
+.tab-btn {
+    flex: 1; /* Ισομερής κατανομή χώρου */
+    min-width: 120px; /* Ελάχιστο πλάτος */
+    margin-bottom: 10px;
+
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background-color: grey;
+    color: black;
+}
+
+.vehicle-products {
+    display: none;
+}
+
+.vehicle-products.active {
+    display: block;
+}
+.popular-products h3 {
+    margin: 30px 0 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px);
+    min-width: 250px;
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product h4 {
+    padding: 10px 15px 0;
+    color: #333;
+}
+
+.product .price {
+    padding: 0 15px;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.inquiry-btn {
+    display: block;
+    width: calc(100% - 30px);
+    margin: 15px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.inquiry-btn:hover {
+    background-color: #7a7777;
+}
+
+/* About Page Styles */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 30px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.team {
+    margin-top: 40px;
+}
+
+.team h3 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.member {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
+    min-width: 250px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.member:hover {
+    transform: translateY(-5px);
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.member h4 {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.member p {
+    color: #666;
+}
+
+/* Contact Page Styles */
+.contact-container {
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+     width: 100%;
+    min-width: unset;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    color: black;
+}
+.contact-ViberMessage{
+    color: #721c24;
+    font-size: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: black;
+    width: 20px;
+    text-align: center;
+}
+
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: black;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color:black;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(49, 10, 10);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: red;
+}
+
+.form-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+.map {
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0 0;
+    width:100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: red;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a:hover {
+    color: #0056b3;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .feature, .category, .product, .member {
+        width: 100%;
+    }
+    
+    .about-content, .contact-container {
+        flex-direction: column;
+    }
+    
+    .about-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+/* Legal Pages Styling */
+/* ===== Legal Pages (Privacy & Terms) ===== */
+.legal-page {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.legal-page h2 {
+    color: #0056b3; /* Κύριο μπλε χρώμα (όπως στο header) */
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.legal-page h3 {
+    color: #333; /* Σκούρο γκρι (όπως τα κείμενα της main) */
+    margin: 25px 0 10px;
+    font-size: 1.3rem;
+}
+
+.legal-page p, .legal-page article {
+    color: #666; /* Γκρι (όπως τα δευτερεύοντα κείμενα) */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.legal-page .btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #0056b3; /* Ταυτόχρωμο με τα κουμπιά της main */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.legal-page .btn:hover {
+    background: #003d82; /* Πιο σκούρο μπλε στο hover */
+}
+
+
+
+
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f1f1f1;
+    padding: 15px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+    display: none; /* Αρχικά κρυφό, μέχρι να ελεγχθεί το cookie */
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cookie-content p {
+    margin: 0;
+    flex: 1;
+    color: #333;
+    font-size: 14px;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cookie-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.accept {
+    background: #4CAF50;
+    color: white;
+}
+
+.reject {
+    background: #f44336;
+    color: white;
+}
+
+.cookie-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cookie-link:hover {
+    text-decoration: underline;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+/* === Responsive Enhancements === */
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 430px) {
+    .hero h2, .hero p {
+        font-size: 1rem;
+    }
+
+    .feature {
+        width: 100%;
+    }
+
+    .tab-btn {
+        font-size: 0.8rem;
+    }
+
+    .contact-form, .contact-info {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 431px) and (max-width: 768px) {
+    .feature {
+        width: 48%;
+    }
+
+    .product {
+        width: 48%;
+    }
+}
