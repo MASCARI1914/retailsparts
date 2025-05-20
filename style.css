@@ -728,35 +728,94 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
+    header {
+        padding: 10px 0;
+        position: relative;
+        background-color: #222; /* Πιο ανοιχτό από το black */
     }
-}
-
-@media (max-width: 430px) {
-    .hero h2, .hero p {
-        font-size: 1rem;
+    
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
     }
-
-    .feature {
+    
+    .logo img {
+        max-height: 80px;
+        margin-right: 10px;
+    }
+    
+    .logo p {
+        font-size: 0.9rem;
+    }
+    
+    nav {
+     
+     display: none;
+        background: #222;
         width: 100%;
+        padding: 10px 0;
+        overflow-x: auto; /* Επιτρέπει scroll αν δεν χωράνε τα items */
+        white-space: nowrap; /* Απαγορεύει την αλλαγή γραμμής */
     }
-
-    .tab-btn {
+    
+    nav.active {
+        display: block;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        color: wheat !important;
+        padding: 12px 15px !important;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: none;
+        border: none;
+        color: wheat;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 101;
+    }
+    
+     nav ul li a:hover {
+        background: rgba(237, 7, 7, 0.2);
+    }
+    .language-switcher {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 0;
+    }
+    
+    #langToggle {
+        padding: 5px 10px;
         font-size: 0.8rem;
     }
-
-    .contact-form, .contact-info {
-        padding: 15px;
-    }
+    
 }
 
-@media (min-width: 431px) and (max-width: 768px) {
-    .feature {
-        width: 48%;
-    }
-
-    .product {
-        width: 48%;
-    }
+/* Default mobile menu toggle button - hidden on desktop */
+.mobile-menu-toggle {
+    display: none; /* Κρυφό σε desktop */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: wheat;
+    font-size: 1.5rem;
+    z-index: 101;
 }
